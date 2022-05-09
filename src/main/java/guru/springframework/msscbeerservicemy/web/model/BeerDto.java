@@ -1,33 +1,50 @@
 package guru.springframework.msscbeerservicemy.web.model;
 
+import java.math.BigDecimal;
+import java.time.OffsetDateTime;
+import java.util.UUID;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
+import javax.validation.constraints.Positive;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
-import java.time.OffsetDateTime;
-import java.util.UUID;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 public class BeerDto {
-    private UUID id;
-    private Integer version;
+	 	@Null
+	    private UUID id;
 
-    private OffsetDateTime createdDate;
-    private OffsetDateTime lastModifiedDate;
+	    @Null
+	    private Integer version;
 
-    private String beerName;
+	    @Null
+	    private OffsetDateTime createdDate;
 
-    private BeerStyleEnum beerStyle;
+	    @Null
+	    private OffsetDateTime lastModifiedDate;
 
-    private Long upc;
+	    @NotBlank
+	    private String beerName;
 
-    private BigDecimal price;
+	    @NotNull
+	    private BeerStyleEnum beerStyle;
 
-    private Integer quantityOnHand;
+	    @Positive
+	    @NotNull
+	    private Long upc;
+
+	    @Positive
+	    @NotNull
+	    private BigDecimal price;
+
+	    private Integer quantityOnHand;
 
 }
