@@ -1,9 +1,8 @@
 package guru.springframework.msscbeerservicemy.web.mappers;
 
-import org.mapstruct.Mapper;
-
 import guru.springframework.msscbeerservicemy.domain.Beer;
 import guru.springframework.msscbeerservicemy.web.model.BeerDto;
+import org.mapstruct.Mapper;
 
 /**
  * Created by jt on 2019-05-25.
@@ -11,7 +10,7 @@ import guru.springframework.msscbeerservicemy.web.model.BeerDto;
 @Mapper(uses = {DateMapper.class})
 public interface BeerMapper {
 
-    BeerDto BeerToBeerDto(Beer beer);
+    BeerDto beerToBeerDto(Beer beer);
 
-    Beer BeerDtoToBeer(BeerDto dto);
+    Beer beerDtoToBeer(BeerDto dto);
 }
